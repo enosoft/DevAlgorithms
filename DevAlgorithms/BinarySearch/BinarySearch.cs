@@ -24,5 +24,60 @@ namespace enosoft.DevAlgorithms.BinarySearch
             }
         }
 
+
+
+        //Iterative Binary Search
+        /*
+         What is Iteration Algorithm?
+In the case of Iterative algorithms, a certain set of statements are repeated a certain number of time.An Iterative algorithm will use looping statements such as for loop, while loop or do-while loop to repeat the same steps number of time.
+         */
+        public static int IterativeBinarySearch(int[] A, int x)
+        {
+            int low = 0, high = A.Length - 1;
+            while (low <= high)
+            {
+                int mid = (low + high) / 2;
+                if (x == A[mid])
+                {
+                    return mid;
+                }
+                else if (x < A[mid])
+                {
+                    high = mid - 1;
+                }
+                else
+                {
+                    low = mid + 1;
+                }
+            }
+            return -1;
+        }
+
+        //Recursive Binary Search
+        /*
+         What is Recursive Algorithm?
+Recursive algorithm, a function calls itself again and again till the base condition(stopping condition) is satisfied.
+         */
+        public static int RecursiveBinarySearch(int[] A, int low, int high, int x)
+        {
+            if (low > high)
+            {
+                return -1;
+            }
+            int mid = (low + high) / 2;
+            if (x == A[mid])
+            {
+                return mid;
+            }
+            else if (x < A[mid])
+            {
+                return RecursiveBinarySearch(A, low, mid - 1, x);
+            }
+            else
+            {
+                return RecursiveBinarySearch(A, mid + 1, high, x);
+            }
+        }
+
     }
 }

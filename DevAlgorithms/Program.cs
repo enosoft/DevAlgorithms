@@ -8,20 +8,14 @@ using System.Threading.Tasks;
 using enosoft.DevAlgorithms;
 using enosoft.DevAlgorithms.BinarySearch;
 
-Array myIntArray = Array.CreateInstance(typeof(int), 5);
-
-myIntArray.SetValue(8, 0);
-myIntArray.SetValue(2, 1);
-myIntArray.SetValue(6, 2);
-myIntArray.SetValue(3, 3);
-myIntArray.SetValue(7, 4);
+int[] A = { 2, 5, 6, 8, 9, 10 };
 
 // Do the required sort first
-Array.Sort(myIntArray);
+Array.Sort(A);
 
 // Displays the values of the Array.
 Console.WriteLine("The int array contains the following:");
-PrintValues(myIntArray);
+PrintValues(A);
 
 
 Console.WriteLine("Hello, World!");
@@ -29,11 +23,18 @@ Console.WriteLine("Hello, World!");
 // Locates a specific object that does not exist in the Array.
 object myObjectOdd = 1;
 
-BinarySearch.FindMyObject(myIntArray, myObjectOdd);
+BinarySearch.FindMyObject(A, myObjectOdd);
 
 // Locates an object that exists in the Array.
-object myObjectEven = 6;
-BinarySearch.FindMyObject(myIntArray, myObjectEven);
+int myObjectEven = 6;
+BinarySearch.FindMyObject(A, myObjectEven);
+
+Console.WriteLine("IterativeBinarySearch : " + BinarySearch.IterativeBinarySearch(A, myObjectEven));
+
+int low = 0;
+int high = A.Length - 1;
+
+Console.WriteLine("RecursiveBinarySearch : " + BinarySearch.RecursiveBinarySearch(A,low,high, myObjectEven));
 
 void PrintValues(Array myArr)
 {
