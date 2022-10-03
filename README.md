@@ -18,5 +18,5 @@ https://leetcode.com/
 https://projecteuler.net/ (More mathematical)
 https://www.hackerrank.com/
 
-These are great environments to find difficult, yet fulfilling algorithmic problems and hone your skills.
+These are great environments to find difficult, yet fulfilling algorithmic problems and hone your skills..
 
